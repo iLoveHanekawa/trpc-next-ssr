@@ -1,0 +1,54 @@
+{
+    "artists": [
+      {
+        "id": 1,
+        "name": "Lil Uzi Vert",
+        "description": "Symphonic trap artist known for his unique vocal style and infectious beats."
+      },
+      {
+        "id": 2,
+        "name": "Future",
+        "description": "Pioneering trap artist known for his distinctive autotuned vocals and hard-hitting beats."
+      },
+      {
+        "id": 3,
+        "name": "Travis Scott",
+        "description": "Multi-platinum selling artist known for his energetic live performances and genre-defying sound."
+      },
+      {
+        "id": 4,
+        "name": "Migos",
+        "description": "Atlanta-based rap trio known for their signature ad-libs and trap-infused beats."
+      },
+      {
+        "id": 5,
+        "name": "Gunna",
+        "description": "Up-and-coming artist known for his smooth delivery and melodic trap beats."
+      },
+      {
+        "id": 6,
+        "name": "Juice WRLD",
+        "description": "Late artist known for his emotional and introspective lyrics set to trap beats."
+      },
+      {
+        "id": 7,
+        "name": "Young Thug",
+        "description": "Innovative trap artist known for his distinctive voice and experimental approach to music."
+      },
+      {
+        "id": 8,
+        "name": "Lil Baby",
+        "description": "Chart-topping artist known for his storytelling and hard-hitting trap beats."
+      },
+      {
+        "id": 9,
+        "name": "Playboi Carti",
+        "description": "Experimental trap artist known for his unique style and avant-garde approach to music."
+      },
+      {
+        "id": 10,
+        "name": "Roddy Ricch",
+        "description": "Grammy-winning artist known for his introspective lyrics and melodic trap beats."
+      }
+    ]
+  }
