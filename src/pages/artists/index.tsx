@@ -2,7 +2,7 @@ import Link from "next/link";
 import { client } from "utils/trpc";
 import { appRouter } from "@/server/routers/_app";
 import { createServerSideHelpers } from '@trpc/react-query/server'
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { InferGetStaticPropsType } from "next";
 
 export type Artist = {
     id: number
@@ -48,4 +48,3 @@ export const getStaticProps = async() => {
         }
     }
 }
- 

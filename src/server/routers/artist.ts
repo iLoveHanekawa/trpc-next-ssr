@@ -13,7 +13,7 @@ export const artistRouter = router({
         id: z.number()
     })).query(async(req) => {
         const { input } = req
-        const res = await fetch(`http://localhost:4000/${input.id}`)
+        const res = await fetch(`http://localhost:4000/artists/${input.id}`)
         const artist = await res.json()
         return {
             artist
