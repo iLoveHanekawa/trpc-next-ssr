@@ -1,5 +1,5 @@
 import { createServerSideHelpers } from '@trpc/react-query/server'
-import { GetStaticPaths, GetServerSidePropsContext, InferGetStaticPropsType } from 'next'
+import { GetStaticPaths, InferGetStaticPropsType, GetStaticProps } from 'next'
 import type { Artist as ArtistType } from '.'
 import { appRouter } from '@/server/routers/_app'
 import { client } from 'utils/trpc'
@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths<{ artistId: string }> = async () => 
     }
 }
 
-export async function getStaticProps(context: GetServerSidePropsContext<{ artistId: string }>) {
+export const getStaticProps: GetStaticProps<{ id: number }, { artistId: string }> = async(context) => {
 
     const helpers = createServerSideHelpers({
         router: appRouter,
@@ -45,6 +45,7 @@ export async function getStaticProps(context: GetServerSidePropsContext<{ artist
         props: {
             trpcState: helpers.dehydrate(),
             id
-        }
+        },
+        revalidate: 1000
     }
 }
