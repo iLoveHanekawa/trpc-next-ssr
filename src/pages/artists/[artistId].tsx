@@ -5,13 +5,12 @@ import { appRouter } from '@/server/routers/_app'
 import { client } from 'utils/trpc'
 
 export default function Artist(props: InferGetStaticPropsType<typeof getStaticProps>) {
-    const { data, isLoading, error } = client.artist.findone.useQuery({ id: props.id }, {
+    const artistQuery = client.artist.findone.useQuery({ id: props.id }, {
         refetchOnMount: false,
         refetchOnWindowFocus: false
     })
-    if(isLoading) return <div>Loading...</div>
-    else if(error instanceof Error) return <div>{error.message}</div>
-    return <div>{(data as { artist: ArtistType }).artist.name }</div>
+    if(artistQuery.status !== 'success') return <div>Loading...</div>
+    return <div>{(artistQuery.data as { artist: ArtistType }).artist.name }</div>
 }
 
 export const getStaticPaths: GetStaticPaths<{ artistId: string }> = async () => {
@@ -44,7 +43,7 @@ export async function getStaticProps(context: GetServerSidePropsContext<{ artist
 
     return {
         props: {
-            trpc: helpers.dehydrate(),
+            trpcState: helpers.dehydrate(),
             id
         }
     }
