@@ -6,7 +6,7 @@ export const artistRouter = router({
         const res = await fetch('http://localhost:4000/artists')
         const artists = await res.json()
         return {
-            artists
+            artists,
         }
     }),
     findone: procedure.input(z.object({

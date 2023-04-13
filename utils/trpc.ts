@@ -20,7 +20,8 @@ export const client = createTRPCNext<AppRouter>({
                 async headers() {
                     return {}
                 },
-            }) ]
+            }) ],
+            abortOnUnmount: true
         }
     },
     ssr: false
